@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Add New Employee</h1>
+<form method="POST">
+    <div class="mb-3">
+        <label>Name</label>
+        <input type="text" name="name" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>Email</label>
+        <input type="email" name="email" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>Phone</label>
+        <input type="text" name="phone" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>Department</label>
+        <input type="text" name="department" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-success">Add Employee</button>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}
