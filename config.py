@@ -1,6 +1,6 @@
 # config.py
 class Config:
-    MYSQL_HOST = 'localhost'
+    MYSQL_HOST = '127.0.0.1'
     MYSQL_USER = 'root'
     MYSQL_PASSWORD = ''        # ← EMPTY! No password in XAMPP by default
     MYSQL_DB = 'employee_db'
