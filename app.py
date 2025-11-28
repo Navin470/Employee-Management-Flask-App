@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 import mysql.connector
 from mysql.connector import Error
+from config import Config
 
 app = Flask(__name__)
 app.secret_key = 'mysecretkey123456'
@@ -10,11 +11,11 @@ app.secret_key = 'mysecretkey123456'
 def get_db_connection():
     try:
         conn = mysql.connector.connect(
-            host='localhost',
-            port=3306,
-            user='root',
-            password='',           # XAMPP default (empty password)
-            database='employee_db'
+            host=Config.MYSQL_HOST,
+            port=Config.MYSQL_PORT,
+            user=Config.MYSQL_USER,
+            password=Config.MYSQL_PASSWORD,           # XAMPP default (empty password)
+            database=Config.MYSQL_DB
         )
         return conn
     except Error as e:
